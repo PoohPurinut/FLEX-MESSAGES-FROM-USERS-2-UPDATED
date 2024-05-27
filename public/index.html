@@ -238,10 +238,12 @@
             liff.login();
           }
           else {
+            alert('start fn runApp()')
             runApp();
           }
         } catch (error) {
           console.error("Error initializing LIFF: ", error);
+          alert("Error initializing LIFF: ", error)
         }
       }
       
