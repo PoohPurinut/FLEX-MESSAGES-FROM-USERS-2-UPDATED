@@ -1,303 +1,78 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Form LIFF</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script>
-      async function init() {
-        try {
-          await liff.init({ liffId: "YOUR_LIFF_ID" });
-          if (!liff.isLoggedIn()) {
-            liff.login();
-          }
-          else {
-            runApp();
-          }
-        } catch (error) {
-          console.error("Error initializing LIFF: ", error);
-        }
-      }
-      
-      async function runApp() {
-        const formHTML = `
-          <form id="myForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-            <input type="submit" value="Submit">
-          </form>
-        `;
-        document.getElementById("formContainer").innerHTML = formHTML;
-        
-        document.getElementById("myForm").addEventListener("submit", async function(event) {
-          event.preventDefault();
-          const formData = new FormData(this);
-          const data = {};
-          formData.forEach((value, key) => {
-            data[key] = value;
-          });
-          const flexMessage = {
-            type: "flex",
-            altText: "This is a Flex Message",
-            contents: {
-              type: "bubble",
-              direction: "ltr",
-              body: {
-                type: "box",
-                layout: "vertical",
-                contents: [
-                  { type: "text", text: "Name:", weight: "bold" },
-                  { type: "text", text: data.name },
-                  { type: "text", text: "Email:", weight: "bold" },
-                  { type: "text", text: data.email }
-                ]
-              }
-            }
-          };
-          await liff.sendMessages([flexMessage]);
-          alert("Form submitted successfully!");
-        });
-      }
-      
-      window.onload = function (e) {
-        init();
-      };
-    </script>
-  </head>
-  <body>
-    <div id="formContainer"></div>
-  </body>
-</html> -->
-<!-- 
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Form LIFF</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script>
-      async function init() {
-        try {
-          await liff.init({ liffId: "2005439751-4Ja0jrB0" });
-          if (!liff.isLoggedIn()) {
-            liff.login();
-          }
-          else {
-            runApp();
-          }
-        } catch (error) {
-          console.error("Error initializing LIFF: ", error);
-        }
-      }
-      
-      async function runApp() {
-        const formHTML = `
-          <form id="myForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-            <input type="submit" value="Submit">
-          </form>
-        `;
-        document.getElementById("formContainer").innerHTML = formHTML;
-        
-        document.getElementById("myForm").addEventListener("submit", async function(event) {
-          event.preventDefault();
-          const formData = new FormData(this);
-          const data = {};
-          formData.forEach((value, key) => {
-            data[key] = value;
-          });
-          const flexMessage = {
-            type: "flex",
-            altText: "This is a Flex Message",
-            contents: {
-              type: "bubble",
-              direction: "ltr",
-              body: {
-                type: "box",
-                layout: "vertical",
-                contents: [
-                  { type: "text", text: "Name:", weight: "bold" },
-                  { type: "text", text: data.name },
-                  { type: "text", text: "Email:", weight: "bold" },
-                  { type: "text", text: data.email }
-                ]
-              }
-            }
-          };
-          await liff.sendMessages([flexMessage]);
-          alert("Form submitted successfully!");
-        });
-      }
-      
-      window.onload = function (e) {
-        init();
-      };
-    </script>
-  </head>
-  <body>
-    <div id="formContainer"></div>
-  </body>
-</html> -->
-<!-- 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Form LIFF</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script>
-      async function init() {
-        try {
-          await liff.init({ liffId: "2005439751-4Ja0jrB0" });
-          if (!liff.isLoggedIn()) {
-            liff.login();
-          }
-          else {
-            runApp();
-          }
-        } catch (error) {
-          console.error("Error initializing LIFF: ", error);
-        }
-      }
-      
-      async function runApp() {
-        const formHTML = `
-          <form id="myForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-            <input type="submit" value="Submit">
-          </form>
-        `;
-        document.getElementById("formContainer").innerHTML = formHTML;
-        
-        document.getElementById("myForm").addEventListener("submit", async function(event) {
-          event.preventDefault();
-          const formData = new FormData(this);
-          const data = {};
-          formData.forEach((value, key) => {
-            data[key] = value;
-          });
-          const flexMessage = {
-            type: "flex",
-            altText: "This is a Flex Message",
-            contents: {
-              type: "bubble",
-              direction: "ltr",
-              body: {
-                type: "box",
-                layout: "vertical",
-                contents: [
-                  { type: "text", text: "Name:", weight: "bold" },
-                  { type: "text", text: data.name },
-                  { type: "text", text: "Email:", weight: "bold" },
-                  { type: "text", text: data.email }
-                ]
-              }
-            }
-          };
-          await liff.sendMessages([flexMessage]);
-          alert("Form submitted successfully!");
-          
-          // Close LIFF after form submission
-          liff.closeWindow();
-        });
-      }
-      
-      window.onload = function (e) {
-        init();
-      };
-    </script>
-  </head>
-  <body>
-    <div id="formContainer"></div>
-  </body>
-</html> -->
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Form LIFF UPDATED</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script>
-      async function init() {
-        try {
-          await liff.init({ liffId: "2005441778-72DWRKXy" });
-          if (!liff.isLoggedIn()) {
-            liff.login();
-          }
-          else {
-            runApp();
-          }
-        } catch (error) {
-          console.error("Error initializing LIFF: ", error);
-          alert("Error initializing LIFF: ", error)
+<head>
+  <title>My Form LIFF UPDATED</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script>
+    async function init() {
+      try {
+        await liff.init({ liffId: "2005441778-72DWRKXy" });
+        if (!liff.isLoggedIn()) {
+          liff.login();
         }
+        else {
+          runApp();
+        }
+      } catch (error) {
+        console.error("Error initializing LIFF: ", error);
+        alert("Error initializing LIFF: ", error)
       }
-      
-      async function runApp() {
-        const formHTML = `
-          <form id="myForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-            <input type="submit" value="Submit">
-          </form>
-        `;
-        document.getElementById("formContainer").innerHTML = formHTML;
-        
-        document.getElementById("myForm").addEventListener("submit", async function(event) {
-          event.preventDefault();
-          const formData = new FormData(this);
-          const data = {};
-          formData.forEach((value, key) => {
-            data[key] = value;
-          });
-          const flexMessage = {
-            type: "flex",
-            altText: "This is a Flex Message",
-            contents: {
-              type: "bubble",
-              direction: "ltr",
-              body: {
-                type: "box",
-                layout: "vertical",
-                contents: [
-                  { type: "text", text: "Name:", weight: "bold" },
-                  { type: "text", text: data.name },
-                  { type: "text", text: "Email:", weight: "bold" },
-                  { type: "text", text: data.email }
-                ]
-              }
-            }
-          };
-          liff.sendMessages([flexMessage]).then(() => {
-            alert("Form submitted successfully!");
-            liff.closeWindow();
-          }).catch((error) => {
-            console.error("Error sending message: ", error);
-          });
+    }
+
+    async function runApp() {
+      document.getElementById("myForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
         });
-      }
-      
-      window.onload = function (e) {
-        init();
-      };
-    </script>
-  </head>
-  <body>
-    <div id="formContainer"></div>
-  </body>
+        const flexMessage = {
+          type: "flex",
+          altText: "This is a Flex Message",
+          contents: {
+            type: "bubble",
+            direction: "ltr",
+            body: {
+              type: "box",
+              layout: "vertical",
+              contents: [
+                { type: "text", text: "Name:", weight: "bold" },
+                { type: "text", text: data.name },
+                { type: "text", text: "Email:", weight: "bold" },
+                { type: "text", text: data.email }
+              ]
+            }
+          }
+        };
+        liff.sendMessages([flexMessage]).then(() => {
+          alert("Form submitted successfully!");
+          liff.closeWindow();
+        }).catch((error) => {
+          console.error("Error sending message: ", error);
+        });
+      });
+    }
+
+    window.onload = function (e) {
+      init();
+    };
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <form id="myForm">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+
 </html>
